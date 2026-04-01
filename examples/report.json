@@ -1,0 +1,127 @@
+{
+  "generatedAt": "2026-04-23T00:14:27.083Z",
+  "root": "/Users/poojamalviya/Workspace/ClaudeProjects/DeadCodeFinder/tests/fixtures/simple",
+  "entrypoints": [
+    "src/index.ts"
+  ],
+  "filesAnalyzed": 6,
+  "findings": [
+    {
+      "id": "file:src/unreachable.ts",
+      "type": "unreachable-file",
+      "name": "src/unreachable.ts",
+      "file": "src/unreachable.ts",
+      "line": 1,
+      "column": 1,
+      "whyLikelyUnused": "The file is not reachable from any configured entrypoint and nothing in the reachable graph imports it.",
+      "evidence": [
+        "File is outside the transitive import closure of entrypoints."
+      ],
+      "confidence": "high",
+      "riskLevel": "low",
+      "falsePositiveReasons": [],
+      "directReferences": 0,
+      "transitiveReferences": 0,
+      "deletionImpact": {
+        "isPublicApi": false,
+        "cascading": [],
+        "notes": [
+          "internal (non-exported) symbol with no non-self references found in the project"
+        ]
+      },
+      "suggestedAction": "safe-to-remove",
+      "safeToAutofix": true
+    },
+    {
+      "id": "sym:src/used.ts#addFinite:16",
+      "type": "unused-export",
+      "name": "addFinite",
+      "file": "src/used.ts",
+      "line": 16,
+      "column": 1,
+      "whyLikelyUnused": "Export is never imported by any file in this repo.",
+      "evidence": [
+        "Importer count across the project: 0."
+      ],
+      "confidence": "high",
+      "riskLevel": "low",
+      "falsePositiveReasons": [],
+      "directReferences": 0,
+      "transitiveReferences": 0,
+      "deletionImpact": {
+        "isPublicApi": false,
+        "cascading": [],
+        "notes": []
+      },
+      "suggestedAction": "safe-to-remove",
+      "safeToAutofix": true
+    },
+    {
+      "id": "sym:src/helpers.ts#capitalize:9",
+      "type": "unused-export",
+      "name": "capitalize",
+      "file": "src/helpers.ts",
+      "line": 9,
+      "column": 1,
+      "whyLikelyUnused": "Export is never imported by any file in this repo.",
+      "evidence": [
+        "Importer count across the project: 0."
+      ],
+      "confidence": "low",
+      "riskLevel": "high",
+      "falsePositiveReasons": [
+        "A file imports the declaring module via `import * as ns` — usage via ns.X can't be ruled out."
+      ],
+      "directReferences": 0,
+      "transitiveReferences": 0,
+      "deletionImpact": {
+        "isPublicApi": false,
+        "cascading": [],
+        "notes": []
+      },
+      "suggestedAction": "investigate-dynamic-use",
+      "safeToAutofix": false
+    },
+    {
+      "id": "file:src/plugins/sample.ts",
+      "type": "unreachable-file",
+      "name": "src/plugins/sample.ts",
+      "file": "src/plugins/sample.ts",
+      "line": 1,
+      "column": 1,
+      "whyLikelyUnused": "The file is not reachable from any configured entrypoint and nothing in the reachable graph imports it.",
+      "evidence": [
+        "File is outside the transitive import closure of entrypoints."
+      ],
+      "confidence": "low",
+      "riskLevel": "high",
+      "falsePositiveReasons": [
+        "File matches a configured dynamicPatterns glob (framework convention / plugin loader)."
+      ],
+      "directReferences": 0,
+      "transitiveReferences": 0,
+      "deletionImpact": {
+        "isPublicApi": false,
+        "cascading": [],
+        "notes": [
+          "file/symbol matches a configured dynamicPatterns glob"
+        ]
+      },
+      "suggestedAction": "investigate-dynamic-use",
+      "safeToAutofix": false
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "byConfidence": {
+      "high": 2,
+      "medium": 0,
+      "low": 2
+    },
+    "byType": {
+      "unreachable-file": 2,
+      "unused-export": 2
+    },
+    "safeToAutofix": 2
+  }
+}

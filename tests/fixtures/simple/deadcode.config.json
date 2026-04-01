@@ -1,0 +1,8 @@
+{
+  "entrypoints": ["src/index.ts"],
+  "include": ["src/**/*.{ts,tsx}"],
+  "ignore": ["**/*.test.ts", "**/*.spec.ts"],
+  "treatExportsAsPublic": false,
+  "dynamicPatterns": ["src/plugins/*.ts"],
+  "safeAutofixMinConfidence": "high"
+}

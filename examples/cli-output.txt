@@ -1,0 +1,11 @@
+Dead code report — analyzed 6 file(s), found 4 finding(s).
+
+high confidence (2)
+  unreachable-file    src/unreachable.ts  src/unreachable.ts:1  risk=low  [safe]  The file is not reachable from any configured entrypoint and nothing in the reachable graph imports it.
+  unused-export       addFinite  src/used.ts:16  risk=low  [safe]  Export is never imported by any file in this repo.
+
+low confidence (2)
+  unused-export       capitalize  src/helpers.ts:9  risk=high    Export is never imported by any file in this repo.
+  unreachable-file    src/plugins/sample.ts  src/plugins/sample.ts:1  risk=high    The file is not reachable from any configured entrypoint and nothing in the reachable graph imports it.
+
+high=2  medium=0  low=2  safeAutofix=2

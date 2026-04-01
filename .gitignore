@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log
+.npmrc
+.env
+.env.*
+!.env.example
+.claude/
